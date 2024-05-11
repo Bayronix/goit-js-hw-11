@@ -12,9 +12,25 @@
     
     <title>Homework 10</title>
     <script type="module" crossorigin src="/vanilla-app-template/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/vanilla-app-template/assets/index-10c40100.css">
+    <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-8c59ed88.js">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/index-441f25f3.css">
   </head>
   <body>
+    <header>
+      <a
+        href="https://goit.global/ua/"
+        rel="noopener noreferrer"
+        aria-label="goit website"
+      >
+        <img
+          src="https://goit.global/mx/assets/images/logo-goit.svg"
+          width="160"
+          alt="goit logo"
+        />
+      </a>
+      <h1>Homework 10: HTTP Request. Gallery</h1>
+    </header>
     <main>
       <section class="gallery">
         <div class="container">
@@ -30,7 +46,9 @@
                   class="search-tooltip"
                   data-text="Provide your keyword for searching, ex: dog, cat, etc."
                 >
-                  <svg class="search-tooltip-icon" width="18" height="18"></svg>
+                  <svg class="search-tooltip-icon" width="18" height="18">
+                    <use href="/vanilla-app-template/assets/icons-491580d2.svg#icon-help"></use>
+                  </svg>
                 </div>
               </label>
               <button type="submit" class="search-bar-button is-disable">
@@ -43,7 +61,46 @@
         </div>
       </section>
     </main>
-
+    <footer>
+      <ul>
+        <li>
+          <a
+            href="https://grifano.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="serhii orlenko website"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Globe_icon.svg"
+              width="48"
+              alt="globe"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://app.uxcel.com/ux/EE4PBID94EEH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="serhii orlenko uxcel profile"
+            ><img
+              src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_ba51b2628d04b9c628af50b178cb209e/uxcel.png"
+              width="48"
+              alt="uxcel logo"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/OrlenkoSerhii"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="serhii orlenko twitter x"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c6/X_Twitter_icon.svg"
+              width="48"
+              alt="X_Twitter_icon"
+          /></a>
+        </li>
+      </ul>
+    </footer>
     
   </body>
 </html>

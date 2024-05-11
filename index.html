@@ -2,17 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vanilla-app-template/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+      type="image/x-icon"
+    />
     
+    <title>Homework 10</title>
     <script type="module" crossorigin src="/vanilla-app-template/commonHelpers.js"></script>
     <link rel="stylesheet" href="/vanilla-app-template/assets/index-10c40100.css">
   </head>
   <body>
-    <form>
-      <input type="text" />
-    </form>
+    <main>
+      <section class="gallery">
+        <div class="container">
+          <div class="search-bar">
+            <form class="search-bar-form">
+              <label class="search-label">
+                <input
+                  type="text"
+                  id="search-bar"
+                  placeholder="Search images..."
+                />
+                <div
+                  class="search-tooltip"
+                  data-text="Provide your keyword for searching, ex: dog, cat, etc."
+                >
+                  <svg class="search-tooltip-icon" width="18" height="18"></svg>
+                </div>
+              </label>
+              <button type="submit" class="search-bar-button is-disable">
+                Search
+              </button>
+            </form>
+            <div class="loader"></div>
+          </div>
+          <ul class="gallery-list"></ul>
+        </div>
+      </section>
+    </main>
 
     
   </body>

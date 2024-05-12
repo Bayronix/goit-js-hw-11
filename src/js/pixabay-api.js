@@ -29,3 +29,4 @@ export async function fetchImageData(searchRequest) {
     showLoader(false);
   }
 }
+// api

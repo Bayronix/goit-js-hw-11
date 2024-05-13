@@ -27,12 +27,11 @@ function initializeIziToast() {
   });
 }
 
-// Function: show notification
-export function showNotification() {
-  initializeIziToast();
-
+export function showNotification(message) {
   iziToast.error({
-    message: `Sorry, there are no images matching your search query. Please try again!`,
+    message:
+      message ||
+      `Sorry, there are no images matching your search query. Please try again!`,
     class: 'error-notification',
     timeout: 5000,
     iconUrl: '/img/octagon.svg',
@@ -47,10 +46,6 @@ export function showNotification() {
 
 // Function: update UI
 export function updateUi(arrayImages) {
-  if (arrayImages.length <= 0) {
-    showNotification();
-  }
-
   const gallery = document.querySelector('.gallery-list');
   const markup = arrayImages
     .map(

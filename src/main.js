@@ -1,8 +1,8 @@
 import './js/pixabay-api';
 import { fetchImageData } from './js/pixabay-api';
 import './js/render-functions';
-
-const refs = {
+import { showNotification, updateUi, showLoader } from './js/render-functions';
+export const refs = {
   searchForm: document.querySelector('.search-bar-form'),
   searchInput: document.querySelector('#search-bar'),
   searchButton: document.querySelector('button'),
@@ -10,15 +10,34 @@ const refs = {
 };
 let userSearchRequestValue = '';
 
-refs.searchInput.addEventListener('input', event => {
-  userSearchRequestValue = event.target.value;
-});
-
 refs.searchForm.addEventListener('submit', event => {
   event.preventDefault();
-  fetchImageData(userSearchRequestValue);
-});
+  userSearchRequestValue = refs.searchInput.value.trim();
+  if (userSearchRequestValue === '') {
+    showNotification('Please enter a search term.');
+    return;
+  }
 
-refs.searchButton.addEventListener('click', () => {
-  fetchImageData(userSearchRequestValue);
+  showLoader(true);
+  setTimeout(() => {
+    try {
+      fetchImageData(userSearchRequestValue)
+        .then(images => {
+          updateUi(images);
+          if (refs.galleryList.childElementCount <= 0) {
+            console.error(error);
+          }
+        })
+        .catch(() => {
+          showNotification('An error occurred while fetching images.');
+        })
+        .finally(() => {
+          setTimeout(() => {
+            showLoader(false);
+          });
+        });
+    } catch (error) {
+      console.error('An unexpected error occurred.');
+    }
+  }, 1000);
 });
